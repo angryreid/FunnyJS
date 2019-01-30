@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      position: relative;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgb(118, 218, 255);
+      overflow: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      min-width: 300vw;
+      min-height: 300vw;
+      background-color: #fff;
+      animation-name: rotate;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    body::before {
+      bottom: 15vh;
+      border-radius: 45%;
+      animation-duration: 10s;
+    }
+
+    body::after {
+      bottom: 12vh;
+      opacity: .5;
+      border-radius: 47%;
+      animation-duration: 10s;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: translate(-50%, 0) rotateZ(0deg);
+      }
+
+      50% {
+        transform: translate(-5 0%, -2%) rotateZ(180deg);
+      }
+
+      100% {
+        transform: translate(-50%, 0%) rotateZ(360deg);
+      }
+    }
+
+    .man {
+      width: 2vh;
+      height: 2vh;
+      position: absolute;
+      z-index: 23;
+      border-radius: 50%;
+      background: #000000;
+      left: 25%;
+      bottom: 12vh;
+      border-radius: 50%;
+      animation-duration: 6s;
+      animation-name: sufing;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes sufing {
+      0% {
+        left: 0%;
+        bottom: 15vh;
+      }
+
+      25% {
+        left: 50%;
+        bottom: 4vh;
+      }
+
+      50% {
+        left: 100%;
+        bottom: 15vh;
+      }
+
+      75% {
+        left: 50%;
+        bottom: 4vh;
+      }
+
+      100% {
+        left: 0%;
+        bottom: 15vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="man"></div>
+</body>
+
+</html>
